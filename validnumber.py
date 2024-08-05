@@ -1,18 +1,12 @@
-def fun(len):
-	if(len>1):
-		if(len):
-			return true;
-			
+n = float(input("enter the number:"))
+
+def fun(n):
+	if(n>1):
+		if((n - int(n))==0):
+			return 'valid number';
 		else:
-			q=1;
+			return 'enter positive integer';
 	else:
-		return false;
-q=0;		
-a = fun();
-if(a):
-	print('valid number');
-else:
-	print('enter a number greater than or equal to one'); 
-if(q):
-	print('enter positive integer');
- 	
+		return 'enter a integer greater than or equal to one';
+	
+print(fun(n));
