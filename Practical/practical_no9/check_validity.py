@@ -7,11 +7,16 @@ def check_validity(text):
 			if symbol in pairs:
 				stack.append(symbol)
 			else:
+				if stack == []:
+					return "invalid text: unmatched pair found"
 				if symbol == pairs[stack[-1]]:
 					stack.pop()
 				else:
-					return "unmatched pair found"
+					return "invalid text: unmatched pair found"
 		else:
 			return symbol + 'not in valid symbols'
-	return "valid text"
-print(check_validity('(<>{}){}()()'))
+	if stack == []:
+		return "valid text"
+	else:
+		return "unmatched pair found"
+print(check_validity('[{()}]'))
